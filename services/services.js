@@ -1,0 +1,22 @@
+import axios from 'axios';
+
+const apiUrl = 'https://api.themoviedb.org/3';
+const apiKey = 'api_key=553060d547730d2ca9504328f96b350b';
+
+export const getPopularMovies = async () => {
+  const url = `${apiUrl}/movie/popular?${apiKey}`;
+  const response = await axios.get(url);
+  return response.data.results;
+};
+
+export const getUpcomingMovies = async () => {
+  const url = `${apiUrl}/movie/upcoming?${apiKey}`;
+  const response = await axios.get(url);
+  return response.data.results;
+};
+
+export const getPopularTV = async () => {
+  const url = `${apiUrl}/tv/popular?${apiKey}`;
+  const response = await axios.get(url);
+  return response.data.results;
+};
