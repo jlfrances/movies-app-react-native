@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "a": "react-native run-android",
+    "clean": "cd android && ./gradlew clean && cd ..",
+    "c": "cd android && ./gradlew clean && cd ..",
+    "all": "cd android && ./gradlew clean && cd .. && react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -11,8 +15,11 @@
   },
   "dependencies": {
     "axios": "^1.2.1",
+    "deprecated-react-native-prop-types": "^4.0.0",
+    "hermes-engine": "^0.11.0",
     "react": "18.1.0",
-    "react-native": "0.70.6"
+    "react-native": "0.70.6",
+    "react-native-image-slider-box": "megamaxs1234/react-native-image-slider-box"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
