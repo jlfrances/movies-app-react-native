@@ -19,7 +19,7 @@ import Error from '../components/Error';
 
 const dimensions = Dimensions.get('screen');
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [upcomingMoviesImages, setUpcomingMoviesImages] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
@@ -91,25 +91,25 @@ const Home = () => {
 
           {popularMovies && (
             <View style={styles.sliderContainer}>
-              <List title="Popular movies" content={popularMovies} />
+              <List navigation={navigation} title="Popular movies" content={popularMovies} />
             </View>
           )}
 
           {popularTV && (
             <View style={styles.sliderContainer}>
-              <List title="Popular TV shows" content={popularTV} />
+              <List navigation={navigation} title="Popular TV shows" content={popularTV} />
             </View>
           )}
 
           {familyMovies && (
             <View style={styles.sliderContainer}>
-              <List title="Family movies" content={familyMovies} />
+              <List navigation={navigation} title="Family movies" content={familyMovies} />
             </View>
           )}
 
           {documentaries && (
             <View style={styles.sliderContainer}>
-              <List title="Documentaries" content={documentaries} />
+              <List navigation={navigation} title="Documentaries" content={documentaries} />
             </View>
           )}
         </ScrollView>

@@ -6,13 +6,16 @@ const placeholderImage = require('../assets/images/placeholder.png');
 
 const propTypes = {
   item: PropTypes.object,
+  navigation: PropTypes.object,
 };
 
 class Card extends PureComponent {
   render() {
-    const {item} = this.props;
+    const {navigation, item} = this.props;
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => navigation.navigate('Detail', {movieSelectedId: item.id})}>
         <Image
           resizeMode="cover"
           style={styles.image}
