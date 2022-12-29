@@ -8,7 +8,10 @@ import {
   ActivityIndicator,
   View
 } from 'react-native';
+// import StarRating from 'react-native-star-rating';
 import { getMovie } from '../services/services';
+import dateFormat from 'dateformat';
+import PlayButton from '../components/PlayButton';
 
 const placeholderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
@@ -38,13 +41,22 @@ const Detail = ({navigation, route}) => {
           }
         />
         <View style={styles.container}>
+          <View>
+            <PlayButton style={styles.playButton} />
+          </View>
           <Text style={styles.movieTitle}>{movieDetail.title}</Text>
           {movieDetail.genres && (<View style={styles.genresContainer}>
             {movieDetail.genres.map((genre) => {
               return (<Text style={styles.genre} key={genre.id}>{genre.name}</Text>);
             })}
-            
+
           </View>)}
+          {/* <StarRating
+            maxStars={5}
+            rating={movieDetail.vote_average / 2}
+            /> */}
+            <Text style={styles.overview}>{movieDetail.overview}</Text>
+            <Text style={styles.releaseDate}>{'Release date: ' + dateFormat(movieDetail.release_date, 'mmmm dS, yyyy')}</Text>
         </View>
       </ScrollView>)}
       {!isLoaded && <ActivityIndicator size="large"/>}
@@ -74,8 +86,19 @@ const styles = StyleSheet.create({
   },
   genre: {
     marginRight: 10,
-    fontWeight: 'bold' 
-  }
+    fontWeight: 'bold'
+  },
+  overview: {
+    padding: 15,
+  },
+  releaseDate: {
+    fontWeight: 'bold'
+  },
+  playButton: {
+    position: 'absolute',
+    top: -20,
+    right: 20,
+  },
 });
 
 export default Detail;
