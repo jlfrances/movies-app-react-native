@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {TouchableOpacity, StyleSheet, Image, Text} from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,7 @@ const propTypes = {
   navigation: PropTypes.object,
 };
 
-class Card extends PureComponent {
+class Card extends React.PureComponent {
   render() {
     const {navigation, item} = this.props;
     return (

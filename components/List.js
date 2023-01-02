@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, FlatList} from 'react-native';
 import Card from './Card';
 import PropTypes from 'prop-types';
@@ -9,7 +9,7 @@ const propTypes = {
   content: PropTypes.array,
 };
 
-class List extends PureComponent {
+class List extends React.PureComponent {
   render() {
     const {navigation, title, content} = this.props;
     return (

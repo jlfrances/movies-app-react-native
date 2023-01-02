@@ -68,9 +68,10 @@ const Detail = ({navigation, route}) => {
                 </View>
               )}
               {/* <StarRating
-            maxStars={5}
-            rating={movieDetail.vote_average / 2}
-            /> */}
+              maxStars={5}
+              rating={movieDetail.vote_average / 2}
+              /> */}
+              <Text>{'[[ Rating is missing ]]'}</Text>
               <Text style={styles.overview}>{movieDetail.overview}</Text>
               <Text style={styles.releaseDate}>
                 {'Release date: ' +
