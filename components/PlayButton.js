@@ -1,6 +1,7 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Colors from '../themes/Colors';
 
 class PlayButton extends React.PureComponent {
     render() {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
       borderRadius: 50,
       width: 50,
       padding: 10,
-      backgroundColor: '#4481FC',
+      backgroundColor: Colors.primary,
     },
 
 });

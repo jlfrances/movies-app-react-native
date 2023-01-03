@@ -3,6 +3,7 @@ import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
+import Colors from '../themes/Colors';
 
 const propTypes = {
   main: PropTypes.bool,
@@ -26,7 +27,7 @@ class NavBar extends React.PureComponent {
               onPress={() => {
                 navigation.navigate('Search');
               }}>
-              <Icon name={'search-outline'} size={30} color={'white'} />
+              <Icon name={'search-outline'} size={30} color={Colors.white} />
             </TouchableOpacity>
         </View>) 
         : <View>
@@ -34,7 +35,7 @@ class NavBar extends React.PureComponent {
               onPress={() => {
                 navigation.goBack();
               }}>
-              <Icon name={'chevron-back'} size={40} color={'white'} />
+              <Icon name={'chevron-back'} size={40} color={Colors.white} />
             </TouchableOpacity>
           </View>
         }

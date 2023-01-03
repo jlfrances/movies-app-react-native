@@ -116,6 +116,7 @@ const Home = ({navigation}) => {
       )}
 
       {!isLoaded && <ActivityIndicator size="large" />}
+
       {error && <Error />}
     </React.Fragment>
   );
