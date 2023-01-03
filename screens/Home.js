@@ -66,7 +66,6 @@ const Home = ({navigation}) => {
       )
       .catch(err => {
         setError(err);
-        console.log('error', err);
       })
       .finally(() => {
         setIsLoaded(true);

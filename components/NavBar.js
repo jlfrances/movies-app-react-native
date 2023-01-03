@@ -35,7 +35,7 @@ class NavBar extends React.PureComponent {
               onPress={() => {
                 navigation.goBack();
               }}>
-              <Icon name={'chevron-back'} size={40} color={Colors.white} />
+              <Icon style={styles.icon} name={'chevron-back'} size={40} color={Colors.primary} />
             </TouchableOpacity>
           </View>
         }

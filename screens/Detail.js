@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   movieTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 20,
     marginBottom: 10,
   },
   genresContainer: {
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   },
   playButton: {
     position: 'absolute',
-    top: -20,
+    top: -30,
     right: 20,
   },
   videoModal: {
