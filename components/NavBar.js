@@ -21,7 +21,7 @@ class NavBar extends React.PureComponent {
         ? (<View style={styles.mainNavBar}>
             <Image
               style={styles.logo}
-              source={require('../assets/images/movies.png')} />
+              source={require('../assets/images/logo/playstore.png')} />
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Search');
