@@ -9,7 +9,7 @@ import {
   View,
   Modal,
 } from 'react-native';
-// import StarRating from 'react-native-star-rating';
+import StarRating from 'react-native-star-rating-widget';
 import {getMovie} from '../services/services';
 import dateFormat from 'dateformat';
 import PlayButton from '../components/PlayButton';
@@ -22,11 +22,13 @@ const Detail = ({navigation, route}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [movieDetail, setMovieDetail] = useState();
   const [modalVisible, setModalVisible] = useState(false);
+  const [rating, setRating] = useState(0);
   const movieId = route.params.movieSelectedId;
 
   useEffect(() => {
     getMovie(movieId).then(movieData => {
       setMovieDetail(movieData);
+      setRating(movieData.vote_average / 2);
       setIsLoaded(true);
     });
   }, [movieId]);
@@ -67,11 +69,11 @@ const Detail = ({navigation, route}) => {
                   })}
                 </View>
               )}
-              {/* <StarRating
-              maxStars={5}
-              rating={movieDetail.vote_average / 2}
-              /> */}
-              <Text>{'[[ Rating is missing ]]'}</Text>
+              <StarRating
+                style={styles.rating}
+                rating={rating}
+                onChange={setRating}
+              />
               <Text style={styles.overview}>{movieDetail.overview}</Text>
               <Text style={styles.releaseDate}>
                 {'Release date: ' +
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    height: height / 2.5,
+    height: height / 2,
   },
   movieTitle: {
     fontSize: 24,
@@ -130,7 +132,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  rating: {
+    marginTop: 10,
+  },
 });
 
 export default Detail;
