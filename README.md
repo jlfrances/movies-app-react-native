@@ -16,17 +16,16 @@ All the data is being gathered by using the [TheMovieDB API](https://developers.
 - **Search** / find movies or TV shows by keyword in the whole database
 
 # 3rd party libs
+Some of the utilities included are:
 
-## react-native-video-controls
-Video player used in the Details screen
-
-## react-native-image-slider-box
-Used in the Home screen to show all upcoming movies in a carousel
-
-## react-native-star-rating-widget
-Displays rating using stars
+- `react-native-video-controls`: Video player used in the Details screen
+- `react-native-image-slider-box`: Used in the Home screen to show all upcoming movies in a carousel
+- `react-native-star-rating-widget`: Displays rating using stars
 
 # Screenshots
+
+## Mobile menu
+![Mobile menu](./assets/images/screenshots/mobile-menu.png)
 
 ## Home screen
 ![Home 1](./assets/images/screenshots/home.jpeg)
@@ -43,6 +42,3 @@ Displays rating using stars
 
 ## Search screen
 ![Search](./assets/images/screenshots/search.jpeg)
-
-## Mobile menu
-![Mobile menu](./assets/images/screenshots/mobile-menu.png)
