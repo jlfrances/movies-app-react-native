@@ -3,7 +3,7 @@ import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
-import Colors from '../themes/Colors';
+import Colors from '../styles/Colors';
 
 const propTypes = {
   main: PropTypes.bool,

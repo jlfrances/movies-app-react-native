@@ -14,6 +14,7 @@ import {getMovie} from '../services/services';
 import dateFormat from 'dateformat';
 import PlayButton from '../components/PlayButton';
 import Video from '../components/Video';
+import Colors from '../styles/Colors';
 
 const placeholderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
@@ -88,7 +89,7 @@ const Detail = ({navigation, route}) => {
           </Modal>
         </View>
       )}
-      {!isLoaded && <ActivityIndicator size="large" />}
+      {!isLoaded && <ActivityIndicator style={styles.spinner} size="large" />}
     </React.Fragment>
   );
 };
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 20,
     marginBottom: 10,
+    color: Colors.grey,
   },
   genresContainer: {
     flexDirection: 'row',
@@ -116,12 +118,15 @@ const styles = StyleSheet.create({
   genre: {
     marginRight: 10,
     fontWeight: 'bold',
+    color: Colors.black,
   },
   overview: {
     padding: 15,
+    color: Colors.grey,
   },
   releaseDate: {
     fontWeight: 'bold',
+    color: Colors.grey,
   },
   playButton: {
     position: 'absolute',
@@ -135,6 +140,11 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginTop: 10,
+  },
+  spinner: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

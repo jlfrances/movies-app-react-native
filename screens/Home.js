@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
+  ImageBackground,
 } from 'react-native';
 import {SliderBox} from 'react-native-image-slider-box';
 import {
@@ -28,6 +29,8 @@ const Home = ({navigation}) => {
   const [popularTV, setPopularTV] = useState([]);
   const [error, setError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const backgroundImage = require('../assets/images/background.png');
 
   const getData = () => {
     return Promise.all([
@@ -74,49 +77,67 @@ const Home = ({navigation}) => {
 
   return (
     <React.Fragment>
+      <ImageBackground source={backgroundImage} style={styles.image}>
       {isLoaded && !error && (
-        <ScrollView>
-          {upcomingMoviesImages && (
-            <View style={styles.sliderContainer}>
-              <SliderBox
-                images={upcomingMoviesImages}
-                autoplay={true}
-                circleLoop={true}
-                dotStyle={styles.sliderStyle}
-                sliderBoxHeight={dimensions.height / 1.5}
-              />
-            </View>
-          )}
+          <ScrollView>
+            {upcomingMoviesImages && (
+              <View style={styles.sliderContainer}>
+                <SliderBox
+                  images={upcomingMoviesImages}
+                  autoplay={true}
+                  circleLoop={true}
+                  dotStyle={styles.sliderStyle}
+                  sliderBoxHeight={dimensions.height / 1.5}
+                />
+              </View>
+            )}
 
-          {popularMovies && (
-            <View style={styles.sliderContainer}>
-              <List navigation={navigation} title="Popular movies" content={popularMovies} />
-            </View>
-          )}
+            {popularMovies && (
+              <View style={styles.sliderContainer}>
+                <List
+                  navigation={navigation}
+                  title="Popular movies"
+                  content={popularMovies}
+                />
+              </View>
+            )}
 
-          {popularTV && (
-            <View style={styles.sliderContainer}>
-              <List navigation={navigation} title="Popular TV shows" content={popularTV} />
-            </View>
-          )}
+            {popularTV && (
+              <View style={styles.sliderContainer}>
+                <List
+                  navigation={navigation}
+                  title="Popular TV shows"
+                  content={popularTV}
+                />
+              </View>
+            )}
 
-          {familyMovies && (
-            <View style={styles.sliderContainer}>
-              <List navigation={navigation} title="Family movies" content={familyMovies} />
-            </View>
-          )}
+            {familyMovies && (
+              <View style={styles.sliderContainer}>
+                <List
+                  navigation={navigation}
+                  title="Family movies"
+                  content={familyMovies}
+                />
+              </View>
+            )}
 
-          {documentaries && (
-            <View style={styles.sliderContainer}>
-              <List navigation={navigation} title="Documentaries" content={documentaries} />
-            </View>
-          )}
-        </ScrollView>
+            {documentaries && (
+              <View style={styles.sliderContainer}>
+                <List
+                  navigation={navigation}
+                  title="Documentaries"
+                  content={documentaries}
+                />
+              </View>
+            )}
+          </ScrollView>
       )}
 
       {!isLoaded && <ActivityIndicator size="large" />}
 
       {error && <Error />}
+      </ImageBackground>
     </React.Fragment>
   );
 };
@@ -129,6 +150,13 @@ const styles = StyleSheet.create({
   },
   sliderStyle: {
     height: 0,
+  },
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
 

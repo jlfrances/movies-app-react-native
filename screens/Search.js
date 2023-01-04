@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Card from '../components/Card';
 import Error from '../components/Error';
 import { search } from '../services/services';
+import Colors from '../styles/Colors';
 
 const Search = ({navigation}) => {
   const [text, onChangeText] = React.useState();
@@ -33,10 +34,11 @@ const Search = ({navigation}) => {
               onChangeText={onChangeText}
               value={text}
               placeholder={'Search movie or TV show'}
+              placeholderTextColor={Colors.grey}
             />
           </View>
           <TouchableOpacity onPress={() => {onSubmit(text)}}>
-            <Icon name={'search-outline'} size={30} />
+            <Icon name={'search-outline'} size={30} color={Colors.grey} />
           </TouchableOpacity>
         </View>
 
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 15,
     padding: 8,
+    color: Colors.grey,
   },
   container: {
     padding: 10,
@@ -86,6 +89,7 @@ const styles = StyleSheet.create({
     flexBasis: 'auto',
     flexGrow: 1,
     paddingRight: 8,
+    color: Colors.grey,
   },
   searchItems: {
     padding: 5,

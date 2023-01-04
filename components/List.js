@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, FlatList} from 'react-native';
 import Card from './Card';
 import PropTypes from 'prop-types';
+import Colors from '../styles/Colors';
 
 const propTypes = {
   navigation: PropTypes.object,
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: 10,
     paddingBottom: 20,
+    color: Colors.grey,
   },
   list: {
     marginTop: 25,

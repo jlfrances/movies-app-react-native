@@ -1,7 +1,8 @@
 import axios from 'axios';
+import {apiKey as apiKeyFromConfig} from '../app.json';
 
 const apiUrl = 'https://api.themoviedb.org/3';
-const apiKey = 'api_key=553060d547730d2ca9504328f96b350b';
+const apiKey = 'api_key=' + apiKeyFromConfig;
 
 export const getPopularMovies = async () => {
   const url = `${apiUrl}/movie/popular?${apiKey}`;
